@@ -12,9 +12,9 @@ const Thumbnail = () => {
           key={i + "thumnail"}
           className={`${
             i === 0
-              ? "border-2  border-orange after:opacity-30 "
+              ? "border-2  border-orange after:opacity-50 "
               : "after:opacity-0"
-          } relative after:absolute after:inset-0 after:bg-darkGrayishBlue  hover:after:opacity-30 after:transition-all after:duration-500 after:ease-in-out rounded-lg  overflow-hidden cursor-pointer`}
+          } relative after:absolute after:inset-0 after:bg-white  hover:after:opacity-50 after:transition-all after:duration-500 after:ease-in-out rounded-lg  overflow-hidden cursor-pointer`}
         >
           <img src={img} alt="Sneakers" className="h-full " />
         </div>

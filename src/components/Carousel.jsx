@@ -5,11 +5,12 @@ import prev from "../assets/icon-previous.svg";
 import add from "../assets/icon-plus.svg";
 import decrease from "../assets/icon-minus.svg";
 import cart from "../assets/cart-white.svg";
+import Thumbnail from "./Thumbnail";
 const Carousel = () => {
   return (
     <main>
       <section className="grid grid-cols-1 md:grid-cols-2 md:items-center md:px-6 md:gap-7 lg:gap-28">
-        <section className="relative">
+        <section className="relative md:flex flex-col gap-4 mb-3">
           <img src={img} className="md:rounded-3xl" />
           <div className="butons md:hidden">
             <div className="next">
@@ -19,6 +20,7 @@ const Carousel = () => {
               <img src={next} />
             </div>
           </div>
+          <Thumbnail />
         </section>
         <section className="my-4 px-6 flex flex-col gap-4">
           <hgroup>

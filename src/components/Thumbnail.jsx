@@ -8,14 +8,15 @@ const Thumbnail = () => {
   return (
     <figure className="hidden md:flex overflow-hidden gap-4">
       {images.map((img, i) => (
-        <div key={i + "thumnail"} className="cursor-pointer">
-          <img
-            src={img}
-            alt="Sneakers"
-            className={`${
-              i === 0 && "border-2  border-orange "
-            } relative after:absolute after:inset-0 rounded-lg`}
-          />
+        <div
+          key={i + "thumnail"}
+          className={`${
+            i === 0
+              ? "border-2  border-orange after:opacity-30 "
+              : "after:opacity-0"
+          } relative after:absolute after:inset-0 after:bg-darkGrayishBlue  hover:after:opacity-30 after:transition-all after:duration-500 after:ease-in-out rounded-lg  overflow-hidden cursor-pointer`}
+        >
+          <img src={img} alt="Sneakers" className="h-full " />
         </div>
       ))}
     </figure>

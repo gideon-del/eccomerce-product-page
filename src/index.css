@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply min-h-screen font-kumbhSans;
+    text-rendering: optimizeSpeed;
+    line-height: 1.4;
+  }
+  .pageContainer {
+    max-width: 1110px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .flex-2 {
+    flex: 2 1 0;
+  }
+  .header {
+    @apply flex justify-between px-2 py-3 shadow-lg items-center md:shadow-none md:border-b;
+  }
+  .nav {
+    @apply flex flex-col items-start gap-5 fixed z-50 font-bold  inset-y-0 left-0 min-h-screen w-[60vw] bg-white px-4 py-3  -translate-x-full transition-transform duration-200 md:relative md:min-h-0 md:w-auto md:left-auto md:translate-x-0;
+  }
+  .nav.active {
+    @apply translate-x-0;
+  }
+  .nav-list {
+    @apply flex flex-col gap-3 md:flex-row font-bold text-veryDarkBlue text-lg md:text-grayishBlue md:text-sm md:font-normal;
+  }
+  .backdrop {
+    @apply fixed bg-blackbox opacity-0 -z-10 inset-0 md:hidden transition-opacity duration-300;
+  }
+  .backdrop.active {
+    @apply opacity-100 z-20;
+  }
+  .close {
+    @apply w-7 aspect-square md:hidden;
+  }
+  .butons {
+    @apply absolute inset-0 flex justify-between items-center px-3;
+  }
+  .next,
+  .prev {
+    @apply bg-white w-10 grid place-items-center aspect-square rounded-full;
+  }
+  .price {
+    @apply font-bold text-3xl flex gap-3 items-center md:items-start;
+  }
+  .discount {
+    @apply px-2 py-1 rounded-md bg-paleOrange text-orange text-base;
+  }
+}

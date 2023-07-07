@@ -1,17 +1,26 @@
 import React from "react";
-import img from "../assets/image-product-1.jpg";
+// import img from "../assets/image-product-1.jpg";
 import next from "../assets/icon-next.svg";
 import prev from "../assets/icon-previous.svg";
 import add from "../assets/icon-plus.svg";
 import decrease from "../assets/icon-minus.svg";
 import cart from "../assets/cart-white.svg";
 import Thumbnail from "./Thumbnail";
+import img1 from "../assets/image-product-1.jpg";
+import img2 from "../assets/image-product-2.jpg";
+import img3 from "../assets/image-product-3.jpg";
+import img4 from "../assets/image-product-4.jpg";
 const Carousel = () => {
   return (
     <main>
       <section className="grid grid-cols-1 md:grid-cols-2 md:items-center md:px-6 md:gap-7 lg:gap-28">
         <section className="relative md:flex flex-col gap-4 mb-3">
-          <img src={img} className="md:rounded-3xl" />
+          <figure>
+            <img src={img1} className="md:rounded-3xl" />
+            <img src={img2} className="md:rounded-3xl" />
+            <img src={img3} className="md:rounded-3xl" />
+            <img src={img4} className="md:rounded-3xl" />
+          </figure>
           <div className="butons md:hidden">
             <div className="next">
               <img src={prev} />

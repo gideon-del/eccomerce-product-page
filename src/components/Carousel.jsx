@@ -15,7 +15,7 @@ const Carousel = () => {
     <main>
       <section className="grid grid-cols-1 md:grid-cols-2 md:items-center md:px-6 md:gap-7 lg:gap-28">
         <section className="relative md:flex flex-col gap-4 mb-3">
-          <figure>
+          <figure className="flex overflow-hidden">
             <img src={img1} className="md:rounded-3xl" />
             <img src={img2} className="md:rounded-3xl" />
             <img src={img3} className="md:rounded-3xl" />

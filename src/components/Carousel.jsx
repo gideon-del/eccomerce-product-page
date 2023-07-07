@@ -6,10 +6,6 @@ import add from "../assets/icon-plus.svg";
 import decrease from "../assets/icon-minus.svg";
 import cart from "../assets/cart-white.svg";
 import Thumbnail from "./Thumbnail";
-import img1 from "../assets/image-product-1.jpg";
-import img2 from "../assets/image-product-2.jpg";
-import img3 from "../assets/image-product-3.jpg";
-import img4 from "../assets/image-product-4.jpg";
 import useThumnail from "../hooks/useThumbnaill";
 const Carousel = () => {
   const { current, thumnails } = useThumnail();
@@ -22,8 +18,11 @@ const Carousel = () => {
             {thumnails.map((img, i) => (
               <img
                 src={img}
-                className={`md:rounded-3xl translate-x-[${moveTo}%]`}
+                className={`md:rounded-3xl`}
                 key={"thumnail" + img}
+                style={{
+                  transform: `translateX(-${moveTo}%)`,
+                }}
               />
             ))}
             {/* <img src={img2} className="md:rounded-3xl" />

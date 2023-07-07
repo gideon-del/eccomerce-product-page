@@ -7,8 +7,11 @@ import decrease from "../assets/icon-minus.svg";
 import cart from "../assets/cart-white.svg";
 import Thumbnail from "./Thumbnail";
 import useThumnail from "../hooks/useThumbnaill";
+import { useState } from "react";
 const Carousel = () => {
-  const { current, thumnails } = useThumnail();
+  const { thumnails } = useThumnail();
+  const [current, setCurrent] = useState(2);
+
   const moveTo = current * 100;
   return (
     <main>
@@ -18,16 +21,13 @@ const Carousel = () => {
             {thumnails.map((img, i) => (
               <img
                 src={img}
-                className={`md:rounded-3xl`}
+                className={`md:rounded-3xl transition-all duration-500 ease-in-out`}
                 key={"thumnail" + img}
                 style={{
                   transform: `translateX(-${moveTo}%)`,
                 }}
               />
             ))}
-            {/* <img src={img2} className="md:rounded-3xl" />
-            <img src={img3} className="md:rounded-3xl" />
-            <img src={img4} className="md:rounded-3xl" /> */}
           </figure>
           <div className="butons md:hidden">
             <div className="next">
@@ -37,7 +37,7 @@ const Carousel = () => {
               <img src={next} />
             </div>
           </div>
-          <Thumbnail />
+          <Thumbnail changeCurrent={setCurrent} current={current} />
         </section>
         <section className="my-4 px-6 flex flex-col gap-4">
           <hgroup>

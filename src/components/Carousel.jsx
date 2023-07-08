@@ -8,6 +8,7 @@ import cart from "../assets/cart-white.svg";
 import Thumbnail from "./Thumbnail";
 import useThumnail from "../hooks/useThumbnaill";
 import { useState } from "react";
+import Modal from "./Modal";
 const Carousel = () => {
   const { thumnails } = useThumnail();
   const [current, setCurrent] = useState(0);
@@ -92,6 +93,7 @@ const Carousel = () => {
           </div>
         </section>
       </section>
+      <Modal />
     </main>
   );
 };

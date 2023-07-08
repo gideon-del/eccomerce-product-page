@@ -10,7 +10,21 @@ import useThumnail from "../hooks/useThumbnaill";
 import { useState } from "react";
 const Carousel = () => {
   const { thumnails } = useThumnail();
-  const [current, setCurrent] = useState(2);
+  const [current, setCurrent] = useState(0);
+  const nextCur = () => {
+    if (current >= 3) {
+      setCurrent(0);
+    } else {
+      setCurrent((prev) => prev + 1);
+    }
+  };
+  const prevCur = () => {
+    if (current <= 0) {
+      setCurrent(3);
+    } else {
+      setCurrent((prev) => prev - 1);
+    }
+  };
 
   const moveTo = current * 100;
   return (
@@ -30,10 +44,10 @@ const Carousel = () => {
             ))}
           </figure>
           <div className="butons md:hidden">
-            <div className="next">
+            <div className="next" onClick={prevCur}>
               <img src={prev} />
             </div>
-            <div className="prev">
+            <div className="prev" onClick={nextCur}>
               <img src={next} />
             </div>
           </div>

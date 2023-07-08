@@ -7,7 +7,7 @@ const Modal = () => {
   const { thumnails } = useThumnail();
   return (
     <section className="hidden md:block fixed inset-0 bg-transparentBlack z-50">
-      <section className="relative md:flex flex-col gap-4 mb-3 justify-center">
+      <section className="relative md:flex flex-col gap-4 mb-3 justify-center w-full h-full">
         <figure className="flex overflow-hidden max-w-lg mx-auto">
           {thumnails.map((img, i) => (
             <img

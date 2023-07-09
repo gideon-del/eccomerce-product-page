@@ -4,13 +4,13 @@ import prev from "../assets/icon-previous.svg";
 import Thumbnail from "./Thumbnail";
 import { useState } from "react";
 const Modal = () => {
-  const { thumnails } = useThumnail();
-  const [current, changeCurrent] = useState(0);
+  const { thumnails, current, changeCurrent, prevCur, nextCur } = useThumnail();
+  // const [current, changeCurrent] = useState(0);
   const moveTo = current * 100;
   return (
     <section className="hidden md:block fixed inset-0 bg-transparentBlack z-50">
       <section className="relative md:flex flex-col gap-4  justify-center w-full h-full max-w-lg mx-auto ">
-        <figure className="flex overflow-hidden max-w-lg mx-auto">
+        <figure className="flex overflow-hidden max-w-lg mx-auto relative">
           {thumnails.map((img, i) => (
             <img
               src={img}
@@ -22,11 +22,11 @@ const Modal = () => {
             />
           ))}
         </figure>
-        <div className="butons md:hidden">
-          <div className="next">
+        <div className="butons px-0 -inset-x-4 ">
+          <div className="next cursor-pointer" onClick={prevCur}>
             <img src={prev} />
           </div>
-          <div className="prev">
+          <div className="prev cursor-pointer" onClick={nextCur}>
             <img src={next} />
           </div>
         </div>

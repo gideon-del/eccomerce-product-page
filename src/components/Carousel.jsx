@@ -6,25 +6,8 @@ import cart from "../assets/cart-white.svg";
 import Thumbnail from "./Thumbnail";
 import useThumnail from "../hooks/useThumbnaill";
 import Modal from "./Modal";
-import { useState } from "react";
 const Carousel = () => {
-  const { thumnails } = useThumnail();
-  const [current, changeCurrent] = useState(0);
-  const nextCur = () => {
-    if (current >= 3) {
-      changeCurrent(0);
-    } else {
-      changeCurrent((prev) => prev + 1);
-    }
-  };
-  const prevCur = () => {
-    if (current <= 0) {
-      changeCurrent(3);
-    } else {
-      changeCurrent((prev) => prev - 1);
-    }
-  };
-
+  const { thumnails, current, changeCurrent, nextCur, prevCur } = useThumnail();
   const moveTo = current * 100;
   return (
     <main>

@@ -1,11 +1,10 @@
-import next from "../assets/icon-next.svg";
-import prev from "../assets/icon-previous.svg";
 import add from "../assets/icon-plus.svg";
 import decrease from "../assets/icon-minus.svg";
 import cart from "../assets/cart-white.svg";
 import Thumbnail from "./Thumbnail";
 import useThumnail from "../hooks/useThumbnaill";
 import Modal from "./Modal";
+import Arrows from "../UI/Arrows";
 const Carousel = () => {
   const { thumnails, current, changeCurrent, nextCur, prevCur } = useThumnail();
   const moveTo = current * 100;
@@ -25,14 +24,11 @@ const Carousel = () => {
               />
             ))}
           </figure>
-          <div className="butons md:hidden">
-            <div className="next" onClick={prevCur}>
-              <img src={prev} />
-            </div>
-            <div className="prev" onClick={nextCur}>
-              <img src={next} />
-            </div>
-          </div>
+          <Arrows
+            nextCur={nextCur}
+            prevCur={prevCur}
+            className="butons md:hidden"
+          />
           <Thumbnail changeCurrent={changeCurrent} current={current} />
         </section>
         <section className="my-4 px-6 flex flex-col gap-4">

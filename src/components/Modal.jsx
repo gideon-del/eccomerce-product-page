@@ -1,11 +1,9 @@
 import useThumnail from "../hooks/useThumbnaill";
-import next from "../assets/icon-next.svg";
-import prev from "../assets/icon-previous.svg";
 import Thumbnail from "./Thumbnail";
-import { useState } from "react";
+import Arrows from "../UI/Arrows";
 const Modal = () => {
   const { thumnails, current, changeCurrent, prevCur, nextCur } = useThumnail();
-  // const [current, changeCurrent] = useState(0);
+
   const moveTo = current * 100;
   return (
     <section className="hidden md:block fixed inset-0 bg-transparentBlack z-50">
@@ -22,14 +20,11 @@ const Modal = () => {
             />
           ))}
         </figure>
-        <div className="butons px-0 -inset-x-4 ">
-          <div className="next cursor-pointer" onClick={prevCur}>
-            <img src={prev} />
-          </div>
-          <div className="prev cursor-pointer" onClick={nextCur}>
-            <img src={next} />
-          </div>
-        </div>
+        <Arrows
+          nextCur={nextCur}
+          prevCur={prevCur}
+          className="butons px-0 -inset-x-4 "
+        />
         <Thumbnail changeCurrent={changeCurrent} current={current} />
       </section>
     </section>

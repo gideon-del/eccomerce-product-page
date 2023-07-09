@@ -1,5 +1,3 @@
-import React from "react";
-// import img from "../assets/image-product-1.jpg";
 import next from "../assets/icon-next.svg";
 import prev from "../assets/icon-previous.svg";
 import add from "../assets/icon-plus.svg";
@@ -7,23 +5,23 @@ import decrease from "../assets/icon-minus.svg";
 import cart from "../assets/cart-white.svg";
 import Thumbnail from "./Thumbnail";
 import useThumnail from "../hooks/useThumbnaill";
-import { useState } from "react";
 import Modal from "./Modal";
+import { useState } from "react";
 const Carousel = () => {
   const { thumnails } = useThumnail();
-  const [current, setCurrent] = useState(0);
+  const [current, changeCurrent] = useState(0);
   const nextCur = () => {
     if (current >= 3) {
-      setCurrent(0);
+      changeCurrent(0);
     } else {
-      setCurrent((prev) => prev + 1);
+      changeCurrent((prev) => prev + 1);
     }
   };
   const prevCur = () => {
     if (current <= 0) {
-      setCurrent(3);
+      changeCurrent(3);
     } else {
-      setCurrent((prev) => prev - 1);
+      changeCurrent((prev) => prev - 1);
     }
   };
 
@@ -52,7 +50,7 @@ const Carousel = () => {
               <img src={next} />
             </div>
           </div>
-          <Thumbnail changeCurrent={setCurrent} current={current} />
+          <Thumbnail changeCurrent={changeCurrent} current={current} />
         </section>
         <section className="my-4 px-6 flex flex-col gap-4">
           <hgroup>

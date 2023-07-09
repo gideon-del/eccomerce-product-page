@@ -54,4 +54,11 @@
   .discount {
     @apply px-2 py-1 rounded-md bg-paleOrange text-orange text-base;
   }
+  .icon-close {
+    @apply transition-all duration-200 ease-in-out cursor-pointer;
+    fill: white;
+  }
+  .icon-close:hover {
+    fill: orange;
+  }
 }

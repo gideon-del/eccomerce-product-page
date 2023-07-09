@@ -5,9 +5,14 @@ import Thumbnail from "./Thumbnail";
 import useThumnail from "../hooks/useThumbnaill";
 import Modal from "./Modal";
 import Arrows from "../UI/Arrows";
+import { useState } from "react";
 const Carousel = () => {
   const { thumnails, current, changeCurrent, nextCur, prevCur } = useThumnail();
+  const [showModal, setShowModal] = useState(false);
   const moveTo = current * 100;
+  const toggleModal = () => {
+    setShowModal((prev) => !prev);
+  };
   return (
     <main>
       <section className="grid grid-cols-1 md:grid-cols-2 md:items-center md:px-6 md:gap-7 lg:gap-28">
@@ -16,11 +21,12 @@ const Carousel = () => {
             {thumnails.map((img, i) => (
               <img
                 src={img}
-                className={`md:rounded-3xl transition-all duration-500 ease-in-out`}
+                className={`md:rounded-3xl transition-all duration-500 ease-in-out cursor-pointer`}
                 key={"thumnail" + img}
                 style={{
                   transform: `translateX(-${moveTo}%)`,
                 }}
+                onClick={toggleModal}
               />
             ))}
           </figure>
@@ -70,7 +76,7 @@ const Carousel = () => {
           </div>
         </section>
       </section>
-      <Modal />
+      {showModal && <Modal toggleModal={toggleModal} cur={current} />}
     </main>
   );
 };

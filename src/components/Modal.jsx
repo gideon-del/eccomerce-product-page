@@ -1,13 +1,32 @@
 import useThumnail from "../hooks/useThumbnaill";
+import close from "../assets/icon-close.svg";
+
 import Thumbnail from "./Thumbnail";
 import Arrows from "../UI/Arrows";
-const Modal = () => {
-  const { thumnails, current, changeCurrent, prevCur, nextCur } = useThumnail();
+const Modal = ({ toggleModal, cur }) => {
+  const { thumnails, current, changeCurrent, prevCur, nextCur } =
+    useThumnail(cur);
 
   const moveTo = current * 100;
   return (
     <section className="hidden md:block fixed inset-0 bg-transparentBlack z-50">
-      <section className="relative md:flex flex-col gap-4  justify-center w-full h-full max-w-lg mx-auto ">
+      <section className="relative md:flex flex-col gap-4  justify-center w-full h-full max-w-md mx-auto ">
+        <div className="hover:text-orange  text-blue-300 flex justify-end cursor-pointer w-fit">
+          <svg
+            width="30"
+            height="15"
+            xmlns="http://www.w3.org/2000/svg"
+            className="icon-close"
+            onClick={toggleModal}
+          >
+            <path
+              d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+              // fill="#fff"
+              // fillRule="evenodd"
+            />
+          </svg>
+        </div>
+
         <figure className="flex overflow-hidden max-w-lg mx-auto relative">
           {thumnails.map((img, i) => (
             <img

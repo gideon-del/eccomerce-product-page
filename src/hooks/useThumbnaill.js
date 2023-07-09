@@ -4,9 +4,9 @@ import img3 from "../assets/image-product-3.jpg";
 import img4 from "../assets/image-product-4.jpg";
 import { useMemo, useState } from "react";
 
-const useThumnail = () => {
+const useThumnail = (cur = 0) => {
   const thumnails = useMemo(() => [img1, img2, img3, img4], []);
-  const [current, changeCurrent] = useState(0);
+  const [current, changeCurrent] = useState(cur);
   const nextCur = () => {
     if (current >= 3) {
       changeCurrent(0);

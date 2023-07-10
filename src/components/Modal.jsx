@@ -11,19 +11,17 @@ const Modal = ({ toggleModal, cur }) => {
   return (
     <section className="hidden md:block fixed inset-0 bg-transparentBlack z-50">
       <section className="relative md:flex flex-col gap-4  justify-center w-full h-full max-w-md mx-auto ">
-        <div className="hover:text-orange  text-blue-300 flex justify-end cursor-pointer w-fit">
+        <div
+          className="hover:text-orange  ml-auto flex justify-end cursor-pointer w-fit z-[9999999]"
+          onClick={toggleModal}
+        >
           <svg
             width="30"
             height="15"
             xmlns="http://www.w3.org/2000/svg"
             className="icon-close"
-            onClick={toggleModal}
           >
-            <path
-              d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
-              // fill="#fff"
-              // fillRule="evenodd"
-            />
+            <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" />
           </svg>
         </div>
 

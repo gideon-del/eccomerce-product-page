@@ -1,5 +1,4 @@
 import useThumnail from "../hooks/useThumbnaill";
-import close from "../assets/icon-close.svg";
 
 import Thumbnail from "./Thumbnail";
 import Arrows from "../UI/Arrows";

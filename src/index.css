@@ -21,7 +21,7 @@
     flex: 2 1 0;
   }
   .header {
-    @apply flex justify-between px-2 py-3 shadow-lg items-center md:shadow-none md:border-b;
+    @apply flex justify-between px-2 py-3 shadow-lg items-center md:shadow-none md:border-b mb-4;
   }
   .nav {
     @apply flex flex-col items-start gap-5 fixed z-50 font-bold  inset-y-0 left-0 min-h-screen w-[60vw] bg-white px-4 py-3  -translate-x-full transition-transform duration-200 md:relative md:min-h-0 md:w-auto md:left-auto md:translate-x-0;

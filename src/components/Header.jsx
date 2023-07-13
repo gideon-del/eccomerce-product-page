@@ -6,6 +6,8 @@ import avater from "../assets/image-avatar.png";
 import close from "../assets/icon-close.svg";
 import { useState } from "react";
 import { useCallback } from "react";
+import product from "../assets/cart-product.png";
+import del from "../assets/icon-delete.svg";
 const navText = ["Collections", "Men", "Women", "About", "Contact"];
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
@@ -50,9 +52,20 @@ const Header = () => {
           <h2 className="px-3 py-4 border-b border-b-[#979797] font-bold text-veryDarkBlue">
             Cart
           </h2>
-          <p className="text-grayishBlue font-bold text-base text-center flex-1 grid place-items-center">
+          {/* <p className="text-grayishBlue font-bold text-base text-center flex-1 grid place-items-center">
             Your cart is empty
-          </p>
+          </p> */}
+          <div>
+            <figure>
+              <img src={product} />
+            </figure>
+            <hgroup>
+              <h3>Fall Limited Edition Sneakers</h3>
+              <h4>
+                $125.00 x 3 <span>$375.00</span>
+              </h4>
+            </hgroup>
+          </div>
         </div>
       </div>
     </header>

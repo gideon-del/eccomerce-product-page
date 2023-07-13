@@ -43,9 +43,10 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 relative">
         <img src={cart} alt="open cart" />
         <img src={avater} alt="" className="w-8 aspect-square" />
+        <div className="absolute min-h-[18rem] shadow-2xl rounded-md bg-white min-w-[20rem] top-10 -right-4"></div>
       </div>
     </header>
   );

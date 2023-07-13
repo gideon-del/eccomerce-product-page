@@ -15,7 +15,7 @@ const Header = () => {
     setShowNav((prev) => !prev);
   }, []);
   return (
-    <header className="header">
+    <header className="header relative">
       <div className="flex gap-5">
         <div className="flex items-center gap-2">
           <img
@@ -45,10 +45,10 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <div className="flex items-center gap-2 relative">
+      <div className="flex items-center gap-2 ">
         <img src={cart} alt="open cart" />
         <img src={avater} alt="" className="w-8 aspect-square" />
-        <div className="absolute min-h-[16rem] shadow-2xl rounded-md bg-white min-w-[23rem]  top-10 -right-4 flex flex-col">
+        <div className="absolute min-h-[16rem] shadow-2xl rounded-md bg-white max-w-[23rem] z-[999999999] md:top-14 left-auto right-1 md:right-0  flex flex-col">
           <h2 className="px-3 py-4 border-b border-b-[#979797] font-bold text-veryDarkBlue">
             Cart
           </h2>
@@ -56,7 +56,7 @@ const Header = () => {
             Your cart is empty
           </p> */}
           <div className="flex flex-col justify-center px-3 flex-1 gap-4">
-            <div className="flex justify-between items-center ">
+            <div className="flex justify-between items-center gap-4 ">
               <figure>
                 <img src={product} />
               </figure>

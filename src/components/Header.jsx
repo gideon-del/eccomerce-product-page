@@ -46,7 +46,14 @@ const Header = () => {
       <div className="flex items-center gap-2 relative">
         <img src={cart} alt="open cart" />
         <img src={avater} alt="" className="w-8 aspect-square" />
-        <div className="absolute min-h-[18rem] shadow-2xl rounded-md bg-white min-w-[20rem] top-10 -right-4"></div>
+        <div className="absolute min-h-[16rem] shadow-2xl rounded-md bg-white min-w-[23rem]  top-10 -right-4 flex flex-col">
+          <h2 className="px-3 py-4 border-b border-b-[#979797] font-bold text-veryDarkBlue">
+            Cart
+          </h2>
+          <p className="text-grayishBlue font-bold text-base text-center flex-1 grid place-items-center">
+            Your cart is empty
+          </p>
+        </div>
       </div>
     </header>
   );

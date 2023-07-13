@@ -55,16 +55,25 @@ const Header = () => {
           {/* <p className="text-grayishBlue font-bold text-base text-center flex-1 grid place-items-center">
             Your cart is empty
           </p> */}
-          <div>
-            <figure>
-              <img src={product} />
-            </figure>
-            <hgroup>
-              <h3>Fall Limited Edition Sneakers</h3>
-              <h4>
-                $125.00 x 3 <span>$375.00</span>
-              </h4>
-            </hgroup>
+          <div className="flex flex-col justify-center px-3 flex-1 gap-4">
+            <div className="flex justify-between items-center ">
+              <figure>
+                <img src={product} />
+              </figure>
+              <hgroup className="font-normal text-base text-darkGrayishBlue ">
+                <h3>Fall Limited Edition Sneakers</h3>
+                <h4>
+                  $125.00 x 3{" "}
+                  <span className="font-bold text-veryDarkBlue">$375.00</span>
+                </h4>
+              </hgroup>
+              <figure>
+                <img src={del} alt="remove from cart" />
+              </figure>
+            </div>
+            <button className="text-white bg-orange px-4 py-4 font-bold text-base rounded-lg">
+              Checkout
+            </button>
           </div>
         </div>
       </div>

@@ -68,8 +68,10 @@ const Header = ({ cat }) => {
                 <hgroup className="font-normal text-base text-darkGrayishBlue ">
                   <h3>Fall Limited Edition Sneakers</h3>
                   <h4>
-                    $125.00 x 3{" "}
-                    <span className="font-bold text-veryDarkBlue">$375.00</span>
+                    $125.00 x {cat?.qunatity}{" "}
+                    <span className="font-bold text-veryDarkBlue">
+                      ${(cat?.quantity * cat?.price).toFixed(2)}
+                    </span>
                   </h4>
                 </hgroup>
                 <figure>

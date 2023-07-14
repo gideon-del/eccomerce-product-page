@@ -2,6 +2,7 @@ import { useState } from "react";
 
 function useCart() {
   const [cart, setCart] = useState(null);
+  const [showCart, setShowCart] = useState(false);
   const changeQuantity = ({ price, num }) => {
     if (num <= 0) {
       setCart(null);
@@ -9,7 +10,10 @@ function useCart() {
     }
     setCart({ quantity: num, price });
   };
-  return { cart, changeQuantity };
+  const toggleCart = () => {
+    setShowCart((prev) => !prev);
+  };
+  return { cart, changeQuantity, showCart, toggleCart };
 }
 
 export default useCart;

@@ -7,10 +7,12 @@ import close from "../assets/icon-close.svg";
 import { useState } from "react";
 import { useCallback } from "react";
 import product from "../assets/cart-product.png";
+import cat from "../hooks/useCart";
 import del from "../assets/icon-delete.svg";
 const navText = ["Collections", "Men", "Women", "About", "Contact"];
-const Header = () => {
+const Header = ({ cat }) => {
   const [showNav, setShowNav] = useState(false);
+
   const toggleNav = useCallback(() => {
     setShowNav((prev) => !prev);
   }, []);
@@ -52,29 +54,33 @@ const Header = () => {
           <h2 className="px-3 py-4 border-b border-b-[#979797] font-bold text-veryDarkBlue ">
             Cart
           </h2>
-          {/* <p className="text-grayishBlue font-bold text-base text-center flex-1 grid place-items-center">
-            Your cart is empty
-          </p> */}
-          <div className="flex flex-col justify-center px-3 flex-1 gap-4">
-            <div className="flex justify-between items-center gap-4 ">
-              <figure>
-                <img src={product} />
-              </figure>
-              <hgroup className="font-normal text-base text-darkGrayishBlue ">
-                <h3>Fall Limited Edition Sneakers</h3>
-                <h4>
-                  $125.00 x 3{" "}
-                  <span className="font-bold text-veryDarkBlue">$375.00</span>
-                </h4>
-              </hgroup>
-              <figure>
-                <img src={del} alt="remove from cart" />
-              </figure>
+
+          {!cat ? (
+            <p className="text-grayishBlue font-bold text-base text-center flex-1 grid place-items-center">
+              Your cart is empty
+            </p>
+          ) : (
+            <div className="flex flex-col justify-center px-3 flex-1 gap-4">
+              <div className="flex justify-between items-center gap-4 ">
+                <figure>
+                  <img src={product} />
+                </figure>
+                <hgroup className="font-normal text-base text-darkGrayishBlue ">
+                  <h3>Fall Limited Edition Sneakers</h3>
+                  <h4>
+                    $125.00 x 3{" "}
+                    <span className="font-bold text-veryDarkBlue">$375.00</span>
+                  </h4>
+                </hgroup>
+                <figure>
+                  <img src={del} alt="remove from cart" />
+                </figure>
+              </div>
+              <button className="text-white bg-orange px-4 py-4 font-bold text-base rounded-lg">
+                Checkout
+              </button>
             </div>
-            <button className="text-white bg-orange px-4 py-4 font-bold text-base rounded-lg">
-              Checkout
-            </button>
-          </div>
+          )}
         </div>
       </div>
     </header>

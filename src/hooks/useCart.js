@@ -12,4 +12,4 @@ function useCart() {
   return { cart, changeQuantity };
 }
 
-export const { cart, changeQuantity } = useCart();
+export default useCart;

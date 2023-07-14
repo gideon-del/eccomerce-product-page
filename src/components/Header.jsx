@@ -48,8 +48,8 @@ const Header = () => {
       <div className="flex items-center gap-2 ">
         <img src={cart} alt="open cart" />
         <img src={avater} alt="" className="w-8 aspect-square" />
-        <div className="absolute min-h-[16rem] shadow-2xl rounded-md bg-white max-w-[23rem] z-[999999999] md:top-14 left-auto right-1 md:right-0  flex flex-col">
-          <h2 className="px-3 py-4 border-b border-b-[#979797] font-bold text-veryDarkBlue">
+        <div className="absolute min-h-[16rem] shadow-2xl rounded-md bg-white min-w-[23rem] z-[999999999] md:top-14 md:left-auto  top-20 md:right-0  flex flex-col left-0 right-0 mx-2">
+          <h2 className="px-3 py-4 border-b border-b-[#979797] font-bold text-veryDarkBlue ">
             Cart
           </h2>
           {/* <p className="text-grayishBlue font-bold text-base text-center flex-1 grid place-items-center">

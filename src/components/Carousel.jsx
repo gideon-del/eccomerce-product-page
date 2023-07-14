@@ -9,6 +9,8 @@ import { useState } from "react";
 const Carousel = () => {
   const { thumnails, current, changeCurrent, nextCur, prevCur } = useThumnail();
   const [showModal, setShowModal] = useState(false);
+  const [quantity, setQuantiy] = useState(0);
+
   const moveTo = current * 100;
   const toggleModal = () => {
     setShowModal((prev) => !prev);

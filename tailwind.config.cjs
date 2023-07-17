@@ -19,22 +19,6 @@ module.exports = {
         lightGray: "hsla(220, 59%, 98%, 1)",
         transparentBlack: "hsla(0, 0%,0%, 0.5)",
       },
-      animation: {
-        scale: "scale 5s cubic-bezier(0, 0, 0.5, 0.1)  2",
-      },
-      keyframes: {
-        scale: {
-          "0%": {
-            transform: "scale(150%)",
-          },
-          "50%": {
-            transform: "scale(80%)",
-          },
-          "100%": {
-            transform: "scale(100%)",
-          },
-        },
-      },
     },
   },
   plugins: [],

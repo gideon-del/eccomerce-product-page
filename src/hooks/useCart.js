@@ -3,7 +3,7 @@ import { useState } from "react";
 function useCart() {
   const [cart, setCart] = useState(null);
   const [showCart, setShowCart] = useState(false);
-  const changeQuantity = ({ price, num }) => {
+  const changeQuantity = ({ price, num } = { price: 125, num: 0 }) => {
     if (num <= 0) {
       setCart(null);
       return;

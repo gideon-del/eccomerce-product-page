@@ -7,8 +7,8 @@ function App() {
   const { cart, changeQuantity } = useCart();
   return (
     <Container>
-      <Header cat={cart} />
-      <Carousel />
+      <Header cat={cart} delt={changeQuantity} />
+      <Carousel changeQuantity={changeQuantity} cat={cart} />
     </Container>
   );
 }

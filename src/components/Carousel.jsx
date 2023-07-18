@@ -7,11 +7,11 @@ import Modal from "./Modal";
 import Arrows from "../UI/Arrows";
 import { useState } from "react";
 import useCart from "../hooks/useCart";
-const Carousel = () => {
+const Carousel = ({ changeQuantity, cat }) => {
   const { thumnails, current, changeCurrent, nextCur, prevCur } = useThumnail();
   const [showModal, setShowModal] = useState(false);
-  const [quantity, setQuantiy] = useState(0);
-  const { changeQuantity } = useCart();
+  const [quantity, setQuantiy] = useState(0 || cat?.quantity);
+  // const { changeQuantity } = useCart();
 
   const moveTo = current * 100;
   const toggleModal = () => {

@@ -7,10 +7,10 @@ import close from "../assets/icon-close.svg";
 import { useState } from "react";
 import { useCallback } from "react";
 import product from "../assets/cart-product.png";
-import cat from "../hooks/useCart";
+
 import del from "../assets/icon-delete.svg";
 const navText = ["Collections", "Men", "Women", "About", "Contact"];
-const Header = ({ cat }) => {
+const Header = ({ cat, delt }) => {
   const [showNav, setShowNav] = useState(false);
 
   const toggleNav = useCallback(() => {
@@ -68,14 +68,18 @@ const Header = ({ cat }) => {
                 <hgroup className="font-normal text-base text-darkGrayishBlue ">
                   <h3>Fall Limited Edition Sneakers</h3>
                   <h4>
-                    $125.00 x {cat?.qunatity}{" "}
+                    $125.00 x {cat?.quantity}{" "}
                     <span className="font-bold text-veryDarkBlue">
                       ${(cat?.quantity * cat?.price).toFixed(2)}
                     </span>
                   </h4>
                 </hgroup>
                 <figure>
-                  <img src={del} alt="remove from cart" />
+                  <img
+                    src={del}
+                    alt="remove from cart"
+                    onClick={() => delt()}
+                  />
                 </figure>
               </div>
               <button className="text-white bg-orange px-4 py-4 font-bold text-base rounded-lg">

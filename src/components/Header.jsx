@@ -9,10 +9,11 @@ import { useCallback } from "react";
 import product from "../assets/cart-product.png";
 
 import del from "../assets/icon-delete.svg";
+import { useCat } from "../context/Cart";
 const navText = ["Collections", "Men", "Women", "About", "Contact"];
 const Header = ({ cat, delt }) => {
   const [showNav, setShowNav] = useState(false);
-
+  const { cart, deleteCart } = useCat();
   const toggleNav = useCallback(() => {
     setShowNav((prev) => !prev);
   }, []);
@@ -55,7 +56,7 @@ const Header = ({ cat, delt }) => {
             Cart
           </h2>
 
-          {!cat ? (
+          {cart.quantity <= 0 ? (
             <p className="text-grayishBlue font-bold text-base text-center flex-1 grid place-items-center">
               Your cart is empty
             </p>
@@ -68,18 +69,14 @@ const Header = ({ cat, delt }) => {
                 <hgroup className="font-normal text-base text-darkGrayishBlue ">
                   <h3>Fall Limited Edition Sneakers</h3>
                   <h4>
-                    $125.00 x {cat?.quantity}{" "}
+                    $125.00 x {cart?.quantity}{" "}
                     <span className="font-bold text-veryDarkBlue">
-                      ${(cat?.quantity * cat?.price).toFixed(2)}
+                      ${(cart?.quantity * cart?.price).toFixed(2)}
                     </span>
                   </h4>
                 </hgroup>
                 <figure>
-                  <img
-                    src={del}
-                    alt="remove from cart"
-                    onClick={() => delt()}
-                  />
+                  <img src={del} alt="remove from cart" onClick={deleteCart} />
                 </figure>
               </div>
               <button className="text-white bg-orange px-4 py-4 font-bold text-base rounded-lg">

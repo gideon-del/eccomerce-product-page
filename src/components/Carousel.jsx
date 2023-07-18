@@ -6,26 +6,18 @@ import useThumnail from "../hooks/useThumbnaill";
 import Modal from "./Modal";
 import Arrows from "../UI/Arrows";
 import { useState } from "react";
-import useCart from "../hooks/useCart";
-const Carousel = ({ updateCart, quantity, setQuantiy }) => {
+import { useCat } from "../context/Cart";
+const Carousel = () => {
   const { thumnails, current, changeCurrent, nextCur, prevCur } = useThumnail();
   const [showModal, setShowModal] = useState(false);
   // const [quantity, setQuantiy] = useState(0 || cat?.quantity);
   // const { changeQuantity } = useCart();
-
+  const { increaseQuantity, decreaseQuantity, quantity, updateCart } = useCat();
   const moveTo = current * 100;
   const toggleModal = () => {
     setShowModal((prev) => !prev);
   };
 
-  const increaseQuantity = () => {
-    console.log("increase");
-    setQuantiy((prev) => prev + 1);
-  };
-  const decreaseQuantity = () => {
-    if (quantity === 0) return;
-    setQuantiy((prev) => prev - 1);
-  };
   return (
     <main>
       <section className="grid grid-cols-1 md:grid-cols-2 md:items-center md:px-6 md:gap-7 lg:gap-28">

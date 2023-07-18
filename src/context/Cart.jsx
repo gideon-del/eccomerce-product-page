@@ -5,9 +5,10 @@ import { createContext } from "react";
 const CartCtx = createContext({
   updateCart: () => {},
   quantity: 0,
-  changeQuantiy: () => {},
-  price: 125,
+  increaseQuantity: () => {},
+  decreaseQuantity: () => {},
   cart: { price: 125, quantity: 0 },
+  deleteCart: () => {},
 });
 
 const CartProvider = ({ children }) => {
@@ -16,7 +17,7 @@ const CartProvider = ({ children }) => {
   const increaseQuantity = () => {
     setQuantiy((prev) => ++prev);
   };
-  const descreaseQuantity = () => {
+  const decreaseQuantity = () => {
     if (quantity <= 0) return;
     setQuantiy((prev) => --prev);
   };
@@ -32,7 +33,7 @@ const CartProvider = ({ children }) => {
       value={{
         quantity,
         increaseQuantity,
-        descreaseQuantity,
+        decreaseQuantity,
         cart,
         updateCart,
         deleteCart,

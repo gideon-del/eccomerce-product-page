@@ -9,11 +9,14 @@ const CartCtx = createContext({
   decreaseQuantity: () => {},
   cart: { price: 125, quantity: 0 },
   deleteCart: () => {},
+  showCart: false,
+  toggleShowCart: () => {},
 });
 
 const CartProvider = ({ children }) => {
   const [quantity, setQuantiy] = useState(0);
   const [cart, setCart] = useState({ price: 125, quantity: 0 });
+  const [showCart, setShowCart] = useState(false);
   const increaseQuantity = () => {
     setQuantiy((prev) => ++prev);
   };
@@ -28,6 +31,9 @@ const CartProvider = ({ children }) => {
     setCart((cat) => ({ ...cat, quantity: 0 }));
     setQuantiy(0);
   };
+  const toggleShowCart = () => {
+    setShowCart((prev) => !prev);
+  };
   return (
     <CartCtx.Provider
       value={{
@@ -37,6 +43,8 @@ const CartProvider = ({ children }) => {
         cart,
         updateCart,
         deleteCart,
+        showCart,
+        toggleShowCart,
       }}
     >
       {children}

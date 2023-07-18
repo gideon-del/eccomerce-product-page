@@ -15,6 +15,14 @@ const Carousel = () => {
   const toggleModal = () => {
     setShowModal((prev) => !prev);
   };
+  const addCart = () => {};
+  const increaseQuantity = () => {
+    setQuantiy((prev) => prev + 1);
+  };
+  const decreaseQuantity = () => {
+    if (quantity === 0) return;
+    setQuantiy((prev) => prev - 1);
+  };
   return (
     <main>
       <section className="grid grid-cols-1 md:grid-cols-2 md:items-center md:px-6 md:gap-7 lg:gap-28">
@@ -65,9 +73,21 @@ const Carousel = () => {
           </div>
           <div className="flex flex-col gap-3 md:flex-row w-full">
             <div className="bg-lightGray rounded-md py-4 flex justify-between items-center px-6 gap-4 md:flex-1 ">
-              <img src={decrease} role="button" className="cursor-pointer" />
-              <p className="font-bold text-veryDarkBlue text-base">0</p>
-              <img src={add} role="button" className="cursor-pointer" />
+              <img
+                src={decrease}
+                role="button"
+                className="cursor-pointer"
+                onClick={decreaseQuantity}
+              />
+              <p className="font-bold text-veryDarkBlue text-base">
+                {quantity}
+              </p>
+              <img
+                src={add}
+                role="button"
+                className="cursor-pointer"
+                onClick={increaseQuantity}
+              />
             </div>
             <button className="bg-orange rounded-md py-4 flex justify-center items-center md:px-6 md:flex-2 relative after:absolute after:inset-0 after:opacity-0 after:transition-all after:duration-500 after:ease-in-out hover:after:opacity-40 after:bg-darkGrayishBlue">
               <div className="flex gap-5">

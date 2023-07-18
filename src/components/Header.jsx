@@ -7,7 +7,6 @@ import close from "../assets/icon-close.svg";
 import { useState } from "react";
 import { useCallback } from "react";
 import product from "../assets/cart-product.png";
-
 import del from "../assets/icon-delete.svg";
 import { useCat } from "../context/Cart";
 const navText = ["Collections", "Men", "Women", "About", "Contact"];

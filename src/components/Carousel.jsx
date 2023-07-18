@@ -6,16 +6,20 @@ import useThumnail from "../hooks/useThumbnaill";
 import Modal from "./Modal";
 import Arrows from "../UI/Arrows";
 import { useState } from "react";
+import useCart from "../hooks/useCart";
 const Carousel = () => {
   const { thumnails, current, changeCurrent, nextCur, prevCur } = useThumnail();
   const [showModal, setShowModal] = useState(false);
   const [quantity, setQuantiy] = useState(0);
+  const { changeQuantity } = useCart();
 
   const moveTo = current * 100;
   const toggleModal = () => {
     setShowModal((prev) => !prev);
   };
-  const addCart = () => {};
+  const updateCart = () => {
+    changeQuantity({ num: quantity, price: 125 });
+  };
   const increaseQuantity = () => {
     setQuantiy((prev) => prev + 1);
   };
@@ -89,7 +93,10 @@ const Carousel = () => {
                 onClick={increaseQuantity}
               />
             </div>
-            <button className="bg-orange rounded-md py-4 flex justify-center items-center md:px-6 md:flex-2 relative after:absolute after:inset-0 after:opacity-0 after:transition-all after:duration-500 after:ease-in-out hover:after:opacity-40 after:bg-darkGrayishBlue">
+            <button
+              className="bg-orange rounded-md py-4 flex justify-center items-center md:px-6 md:flex-2 relative after:absolute after:inset-0 after:opacity-0 after:transition-all after:duration-500 after:ease-in-out hover:after:opacity-40 after:bg-darkGrayishBlue"
+              onClick={updateCart}
+            >
               <div className="flex gap-5">
                 <img src={cart} />
                 <p className="font-bold text-base text-white">Add to cart</p>
